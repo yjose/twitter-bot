@@ -9,7 +9,6 @@ const AutoDM = () => {
 };
 
 const SendMessage = user => {
-  console.log(" 🎉🎉🎉🎉 New Follower  🎉🎉🎉🎉🎉 ");
   const { screen_name, name } = user.source;
 
   const obj = {
@@ -18,6 +17,7 @@ const SendMessage = user => {
   };
   // the follow stream track if I follow author person too.
   if (screen_name != my_user_name) {
+    console.log(" 🎉🎉🎉🎉 New Follower  🎉🎉🎉🎉🎉 ");
     setTimeout(() => {
       T.post("direct_messages/new", obj)
         .catch(err => {
