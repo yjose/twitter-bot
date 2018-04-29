@@ -1,5 +1,5 @@
 const T = require("./Twit.js");
-const my_user_name = require("./config").userName;
+const my_user_name = require("../config").userName;
 const timeout = 1000 * 60 * 5; // timeout to send the message 5 min
 
 const AutoDM = () => {
@@ -40,7 +40,7 @@ const GenerateMessage = name => {
   ];
   const d = new Date();
   const dayName = days[d.getDay()];
-  return (text = ` Hi ${name} Thanks for being a part of my social media network. I'am the @PicsrushE founder,A new Online Image Editor completely with web technologies,I'm also a reactjs developer and medium blogger.\n Happy to discuss anytime 😊  \n Happy ${dayName} 😊😊 `);
+  return `Hi ${name} Thanks for being a part of my social media network. I'am the @PicsrushE founder,A new Online Image Editor completely with web technologies,I'm also a reactjs developer and medium blogger.\n Happy to discuss anytime 😊  \n Happy ${dayName} 😊😊 `;
 };
 
 module.exports = AutoDM;
