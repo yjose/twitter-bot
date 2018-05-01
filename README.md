@@ -3,7 +3,6 @@
 
 ![](https://cdn-images-1.medium.com/max/2000/1*yAlQxm27HPR2qjRcqizY2w.png)
 
-Create your own auto direct message Twitter Bot
 
 Create a welcome message for your new followers in twitter is the first step to get more people engage with your tweets and links, As you know there is a lot of online services that help you send auto direct message to your new followers but I think it’s crazy how online services charge between $5 to $15 for a simple tool that creates bots when you can build your own.
 
@@ -24,67 +23,6 @@ To develop this bot we need:
 If you are not familiar with Nodejs. or maybe you are not a programmer, you can fork the project from GitHub and use it as your own.
 
 > Let’s get started.
-
-### How it works 💡
-
-If you have already cloned the project to your computer you will see this structure:
-```sh
-$ cd twitter-bot  
-$ tree .     
-.  
-├── config.js  
-├── index.js  
-├── LICENSE  
-├── package.json  
-├── Procfile  
-├── README.md  
-└── src  
-    ├── AutoDM.js  
-    └── Twit.js
-```
-As you can see the project is a simple node js app with an index.js file as an entry point:
-
-![](https://cdn-images-1.medium.com/max/1600/1*Y-eOVjfnFZYCN5LQUblrhw.png)
-
-infex.js file
-
-The index file is a simple script that imports and calls the  `AutoDM`  function.
-
-To make the app more fun we added a simple message when the app has started successfully.
-
-As I have already mentioned I use the twit package to connect to the Twitter API, to do that we need to create a simple twitter app and init the Twit instance with your App config like the following:
-
-![](https://cdn-images-1.medium.com/max/1600/1*X4jq7jTLSq346ho5Y7WJ5A.png)
-
-Twit.js file
-
-![](https://cdn-images-1.medium.com/max/1600/1*gpIo0pnMOEGV_ApszXz-0A.png)
-
-config.js file
-
-`process.env.XXXXXXX`  is an environment variable that we need to add to our Heroku app in deployment step.
-
-Now the fun part is to Create the AutoDM function :
-
-As you can see the  `AutoDM`  is a simple arrow function that listens to the stream  `follow`  event from the twitter API and executes the SendMessage function.
-
-![](https://cdn-images-1.medium.com/max/1600/0*kGF0ObTjFW4zIVA2.)
-
-AutoDM.js file
-
-The  `sendMessge`  function gets as a parameter the user who follows you. All we need here is to create an obj with  `screen_name`  and a text message and send a post request to the Twitter API for sending a Direct Message to  `@screen_name`as the following.
-
-![](https://cdn-images-1.medium.com/max/1600/1*8RHHjhuP5MMix6iyB1oFQA.png)
-
-SendMessge Function
-
-Now is you your turn to think how you would like to introduce yourself. You can modify the existing GenerateMessage Function to create your own welcome message, don’t forget to add some human behaviour in there, it makes more chance that the user clicks to your link or respond to your message.
-
-![](https://cdn-images-1.medium.com/max/1600/1*vsCpSy_gRmkKavZeyzF9WA.png)
-
-GenerateMessge Function
-
-It is easy, doesn’t it? you can read more code from the Github repo.
 
 ----------
 
@@ -150,3 +88,66 @@ To know if your app has been started successfully click to the  `more`  button a
 ### Live Demo
 
 To make sure that’s the hole project work perfectly you need just to  [**follow**](https://medium.com/r/?url=https%3A%2F%2Ftwitter.com%2FElaziziYoussouf)  me and my twitter bot will send you a welcome message 🤗🤗.
+
+----------
+
+### How it works 💡
+
+If you have already cloned the project to your computer you will see this structure:
+```sh
+$ cd twitter-bot  
+$ tree .     
+.  
+├── config.js  
+├── index.js  
+├── LICENSE  
+├── package.json  
+├── Procfile  
+├── README.md  
+└── src  
+    ├── AutoDM.js  
+    └── Twit.js
+```
+As you can see the project is a simple node js app with an index.js file as an entry point:
+> infex.js file
+![](https://cdn-images-1.medium.com/max/1600/1*Y-eOVjfnFZYCN5LQUblrhw.png)
+
+
+
+The index file is a simple script that imports and calls the  `AutoDM`  function.
+
+To make the app more fun we added a simple message when the app has started successfully.
+
+As I have already mentioned I use the twit package to connect to the Twitter API, to do that we need to create a simple twitter app and init the Twit instance with your App config like the following:
+> Twit.js file
+![](https://cdn-images-1.medium.com/max/1600/1*X4jq7jTLSq346ho5Y7WJ5A.png)
+
+
+> config.js file
+![](https://cdn-images-1.medium.com/max/1600/1*gpIo0pnMOEGV_ApszXz-0A.png)
+
+
+
+`process.env.XXXXXXX`  is an environment variable that we need to add to our Heroku app in deployment step.
+
+Now the fun part is to Create the AutoDM function :
+
+As you can see the  `AutoDM`  is a simple arrow function that listens to the stream  `follow`  event from the twitter API and executes the SendMessage function.
+> AutoDM.js file
+![](https://cdn-images-1.medium.com/max/1600/0*kGF0ObTjFW4zIVA2.)
+
+
+
+The  `sendMessge`  function gets as a parameter the user who follows you. All we need here is to create an obj with  `screen_name`  and a text message and send a post request to the Twitter API for sending a Direct Message to  `@screen_name`as the following.
+> SendMessge Function
+![](https://cdn-images-1.medium.com/max/1600/1*8RHHjhuP5MMix6iyB1oFQA.png)
+
+
+
+Now is you your turn to think how you would like to introduce yourself. You can modify the existing GenerateMessage Function to create your own welcome message, don’t forget to add some human behaviour in there, it makes more chance that the user clicks to your link or respond to your message.
+> GenerateMessge Function
+![](https://cdn-images-1.medium.com/max/1600/1*vsCpSy_gRmkKavZeyzF9WA.png)
+
+
+
+It is easy, doesn’t it? you can read more code from the Github repo.
