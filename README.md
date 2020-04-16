@@ -1,5 +1,9 @@
+###  ⚠️  Twitter deleted the Stream API in favor of a new Activities API,
+### This Package is not working any More.
+
 
 # Create your own auto direct message Twitter Bot 💬💬
+
 
 ![](https://cdn-images-1.medium.com/max/2000/1*yAlQxm27HPR2qjRcqizY2w.png)
 
