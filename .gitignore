@@ -1,0 +1,5 @@
+node_modules
+dist
+*.lock
+model.nlp
+tokens

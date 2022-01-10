@@ -1,6 +1,6 @@
 const T = require("./Twit.js");
 const my_user_name = require("../config").userName;
-const timeout = 1000 * 60 * 5; // timeout to send the message 5 min
+const timeout = 1000 * 60 * 1; // timeout to send the message 1 min
 
 const AutoDM = () => {
   const stream = T.stream("user");
@@ -41,8 +41,9 @@ const GenerateMessage = name => {
   ];
   const d = new Date();
   const dayName = days[d.getDay()];
-  return `Hi ${name} Thanks for .... \n Happy ${dayName} 😊😊 `; // your message
-  // My message   return `Hi ${name} Thanks for being a part of my social media network. I'am the @PicsrushE founder,A new Online Image Editor completely with web technologies,I'm also a reactjs developer and medium blogger.\n Happy to discuss anytime 😊  \n Happy ${dayName} 😊😊 `;
+  const sundayMessage = 'e você pode pedir aquele sushi do yanak através do link: https://cardapio_link'
+  const mondayMessage = 'Estamos fechados, durante toda a semana nossa equipe trabalhou muito entregando o melhor sushi da zona sul de PE, ficaremos felizes em te atender amanhã'
+  return `Olá, ${name} obrigado por nos seguir \n Hoje é ${dayName} 😊😊 `;
 };
 
 module.exports = AutoDM;

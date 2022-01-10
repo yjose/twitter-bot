@@ -10,5 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "twit": "^2.2.9"
-  }
+  },
+  "repository": "https://github.com/helton-quintans/twitter-bot.git"
 }
